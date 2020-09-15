@@ -38,11 +38,13 @@ public class DsMysqlGenerator {
 		String dbPassword = "123456";
 		// 基础实体类
 		String superEntityClass = basePackage + ".common.BaseEntity";
+//		String superEntityClass = null;
 		// 基础类的属性
 		String[] superEntityColumns = null;
 //		String[] superEntityColumns = {"id"};
 		// 基础controller
 		String superControllerClass = basePackage + ".common.BaseController";
+//		String superControllerClass = null;
 		// 乐观锁字段名
 		String versionFiledName = null;
 //		String versionFiledName = "version";
