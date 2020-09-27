@@ -1,14 +1,16 @@
 package com.baomidou.mybatisplus.samples.ar;
 
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.samples.ar.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.samples.ar.entity.User;
+import java.util.List;
 
 /**
  * <p>
@@ -25,9 +27,9 @@ public class SampleTest {
     @Test
     public void aInsert() {
         User user = new User();
-        user.setName("咩咩");
-        user.setAge(5);
-        user.setEmail("miemie@mp.com");
+        user.setName("dawn");
+        user.setAge(28);
+        user.setEmail("dawn@163.com");
         Assert.assertTrue(user.insert());
         // 成功可以直接获取 ID
         System.err.println("\n插入成功 ID 为：" + user.getId());
@@ -56,5 +58,13 @@ public class SampleTest {
         User user = new User().selectOne(new QueryWrapper<User>().lambda().eq(User::getId, 2));
         Assert.assertEquals("Jack", user.getName());
         Assert.assertTrue(3 == user.getAge());
+    }
+
+    @Test
+    public void eSelectAll(){
+        List<User> users = new User().selectAll();
+        for (User user : users) {
+            System.err.println(JSON.toJSONString(user));
+        }
     }
 }

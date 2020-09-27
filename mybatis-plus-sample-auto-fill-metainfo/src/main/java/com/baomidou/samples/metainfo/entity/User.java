@@ -25,6 +25,6 @@ public class User {
     
     private String email;
     
-    @TableField(fill = FieldFill.INSERT_UPDATE)
+//    @TableField(fill = FieldFill.INSERT_UPDATE)
     private String operator;
 }

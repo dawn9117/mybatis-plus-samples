@@ -1,6 +1,8 @@
 package com.baomidou.mybatisplus.samples.assembly.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.samples.assembly.entity.User;
 import com.baomidou.mybatisplus.samples.assembly.service.IUserService;
 import org.slf4j.Logger;
@@ -30,9 +32,9 @@ public class UserController {
         user.setAge(18);
         user.setName("啪啪啪");
         userService.save(user);
-        List<User> list = userService.list(new LambdaQueryWrapper<>(new User()).select(User::getId, User::getName));
+        List<User> list = userService.list(Wrappers.lambdaQuery(user).select(User::getId, User::getName));
         list.forEach(u -> LOGGER.info("当前用户数据:{}", u));
-        return "papapapap@qq.com";
+        return JSON.toJSONString(list);
     }
 
 }
