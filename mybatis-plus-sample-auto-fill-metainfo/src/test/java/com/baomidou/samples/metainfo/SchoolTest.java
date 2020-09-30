@@ -28,6 +28,8 @@ public class SchoolTest {
 		school.setLocation("闵行");
 		assert schoolService.save(school);
 		System.out.println(school);
+
+		schoolService.updateById(school);
 	}
 
 }

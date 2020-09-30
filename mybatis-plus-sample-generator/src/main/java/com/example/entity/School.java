@@ -1,12 +1,16 @@
-package com.baomidou.samples.metainfo.entity;
+package com.example.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.Version;
+import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -24,7 +28,7 @@ public class School implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     @TableField("name")
@@ -40,16 +44,16 @@ public class School implements Serializable {
     @Version
     private Long version;
 
-    @TableField(value = "create_user", fill = FieldFill.INSERT)
+    @TableField("create_user")
     private Long createUser;
 
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    @TableField("create_time")
     private LocalDateTime createTime;
 
-    @TableField(value = "update_user", fill = FieldFill.UPDATE)
+    @TableField("update_user")
     private Long updateUser;
 
-    @TableField(value = "update_time", fill = FieldFill.UPDATE)
+    @TableField("update_time")
     private LocalDateTime updateTime;
 
 
