@@ -28,8 +28,26 @@ public class SchoolTest {
 		school.setLocation("闵行");
 		assert schoolService.save(school);
 		System.out.println(school);
-
 		schoolService.updateById(school);
+	}
+
+	@Test
+	public void insertStrategy() {
+		School school = new School();
+		school.setName("");
+		school.setLocation("");
+		assert schoolService.save(school);
+		System.out.println(school);
+	}
+
+	@Test
+	public void updateStrategy() {
+		School school = new School();
+		school.setId(1311219614360829953L);
+		school.setName("");
+		school.setLocation("");
+		assert schoolService.updateById(school);
+		System.out.println(school);
 	}
 
 }

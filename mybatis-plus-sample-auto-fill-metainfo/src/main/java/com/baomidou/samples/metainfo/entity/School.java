@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author dawn
@@ -19,38 +19,38 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("mp_school")
-@ApiModel(value="School对象", description="")
+@ApiModel(value = "School对象", description = "")
 public class School implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @TableId(value = "id")
-    private Long id;
+	@TableId(value = "id")
+	private Long id;
 
-    @TableField("name")
-    private String name;
+	@TableField(value = "name", insertStrategy = FieldStrategy.NOT_EMPTY, updateStrategy = FieldStrategy.NOT_EMPTY)
+	private String name;
 
-    @TableField("del_flag")
-    private String delFlag;
+	@TableField("del_flag")
+	private String delFlag;
 
-    @TableField("location")
-    private String location;
+	@TableField(value = "location", insertStrategy = FieldStrategy.NOT_NULL, updateStrategy = FieldStrategy.NOT_NULL)
+	private String location;
 
-    @TableField("version")
-    @Version
-    private Long version;
+	@TableField("version")
+	@Version
+	private Long version;
 
-    @TableField(value = "create_user", fill = FieldFill.INSERT)
-    private Long createUser;
+	@TableField(value = "create_user", fill = FieldFill.INSERT)
+	private Long createUser;
 
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
+	@TableField(value = "create_time", fill = FieldFill.INSERT)
+	private LocalDateTime createTime;
 
-    @TableField(value = "update_user", fill = FieldFill.UPDATE)
-    private Long updateUser;
+	@TableField(value = "update_user", fill = FieldFill.UPDATE)
+	private Long updateUser;
 
-    @TableField(value = "update_time", fill = FieldFill.UPDATE)
-    private LocalDateTime updateTime;
+	@TableField(value = "update_time", fill = FieldFill.UPDATE)
+	private LocalDateTime updateTime;
 
 
 }
