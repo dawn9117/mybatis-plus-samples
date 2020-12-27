@@ -1,4 +1,4 @@
-package com.chinaunicom.diagnosis;
+package com.chinaunicom.project;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;

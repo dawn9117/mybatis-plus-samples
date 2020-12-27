@@ -1,4 +1,4 @@
-package com.chinaunicom.diagnosis.common;
+package com.chinaunicom.project.common;
 
 /**
  * 基础controller
